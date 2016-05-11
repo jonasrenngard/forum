@@ -1,0 +1,20 @@
+form {
+  width: 400px;
+  padding: 2em;
+
+  input,
+  textarea{
+    background-color: #ecf0f1;
+    padding: 1em;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  input[type=submit] {
+    background-color: #2ecc71;
+    color: white;
+  }
+}

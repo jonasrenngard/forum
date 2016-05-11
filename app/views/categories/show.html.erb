@@ -1,0 +1,15 @@
+<%= link_to("Start", root_path) %>
+
+<% if @category.parent.present? %>
+  <%= link_to("Back to #{@category.parent.name}", @category.parent) %>
+<% end %>
+<br>
+<h1><%= @category.name %></h1>
+<% @category.categories.each do |category| %>
+  <%= link_to(category.name, category) %>
+<% end %>
+
+<br>
+<% @category.topics.each do |topic| %>
+  <%= link_to(topic.name, topic) %>
+<% end %>
