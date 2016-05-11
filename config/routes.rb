@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: { registrations: "registrations" }
-  resources :categories
-  resources :topics do
-    resources :posts
+  resources :categories do
+    resources :topics do
+      resources :posts
+    end
   end
   root to: "categories#index"
 end

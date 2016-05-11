@@ -1,3 +1,5 @@
+<%= link_to("Lägg till nytt ämne", new_category_topic_path(@category)) %>
+<br>
 <%= link_to("Start", root_path) %>
 
 <% if @category.parent.present? %>
@@ -11,5 +13,5 @@
 
 <br>
 <% @category.topics.each do |topic| %>
-  <%= link_to(topic.name, topic) %>
+  <%= link_to topic.name, category_topic_path(@category, topic) %>
 <% end %>
