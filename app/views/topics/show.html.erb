@@ -1,6 +1,11 @@
+
 <h1> <%= @topic.name %> </h1>
 <section class="posts">
   <%= render @topic.posts %>
-  <%= render 'posts/form' %>
 
+  <% if signed_in? %>
+    <%= render 'posts/form' %>
+  <% else %>
+    <p>Var god <%= link_to("logga in", new_user_session_path) %> eller skapa en användare för att posta</p>
+  <% end %>
 </section>
